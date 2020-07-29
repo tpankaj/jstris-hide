@@ -11,6 +11,8 @@ const callback = function(mutationsList) {
         if (mutation.type === 'childList') {
             if (parseInt(lrem.textContent) <= 4) {
                 lrem.style.display = "block";
+            } else {
+                lrem.style.display = "none";
             }
         }
     }
