@@ -9,10 +9,16 @@ const config = { childList: true };
 const callback = function(mutationsList) {
     for (let mutation of mutationsList) {
         if (mutation.type === 'childList') {
-            if (parseInt(lrem.textContent) <= 4) {
-                lrem.style.display = "block";
+            if (parseInt(lrem.textContent) <= 0) {
+                lrem.style.display = null;
+                gstats.style.display = null;
+            }
+            else if (parseInt(lrem.textContent) <= 4) {
+                lrem.style.display = null;
+                gstats.style.display = "none";
             } else {
                 lrem.style.display = "none";
+                gstats.style.display = "none";
             }
         }
     }
